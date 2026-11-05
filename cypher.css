@@ -1,0 +1,59 @@
+/* ===== Cypher × Liquid Glass layer (loads after theme.css) ===== */
+:root{--ink:#e6f1ff;--muted:#8a9bb4;--accent:#3ef2ff;--accent-2:#a77bff;--mono:'JetBrains Mono','Fira Code',ui-monospace,SFMono-Regular,Consolas,monospace;
+--glass-bg:linear-gradient(145deg,rgba(30,42,68,.55),rgba(10,16,30,.35));--glass-border:rgba(120,220,255,.18);
+--glass-shadow:inset 0 1px 0 rgba(255,255,255,.12),inset 0 -1px 0 rgba(62,242,255,.06),0 0 0 1px rgba(62,242,255,.04),0 24px 70px rgba(0,0,0,.55),0 0 40px rgba(62,242,255,.05)}
+html{color-scheme:dark}
+body{background:#05070d;color:var(--ink)}
+body:before{background:radial-gradient(40vw 40vw at 8% 0%,rgba(62,242,255,.16),transparent 70%),radial-gradient(38vw 38vw at 95% 25%,rgba(167,123,255,.18),transparent 70%),radial-gradient(45vw 45vw at 30% 80%,rgba(0,140,255,.12),transparent 70%),radial-gradient(40vw 40vw at 90% 95%,rgba(255,60,200,.09),transparent 70%)}
+body:after{opacity:1;background-image:linear-gradient(rgba(62,242,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(62,242,255,.045) 1px,transparent 1px),repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);background-size:48px 48px,48px 48px,auto;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 85%);mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 85%)}
+::selection{background:rgba(62,242,255,.35);color:#fff}
+h1,h2,h3,strong{color:var(--ink)}
+p,li,small,figcaption{color:var(--muted)}
+a{color:inherit}
+
+/* Glass surfaces: dark refractive */
+.glass:after,.project-main:after,.about:after,.award-story:after,.poster-feature:after,.contact:after{background:radial-gradient(380px circle at var(--mx,30%) var(--my,0%),rgba(62,242,255,.16),transparent 50%);mix-blend-mode:screen}
+.glass:before,.project-main:before,.about:before,.award-story:before,.poster-feature:before,.contact:before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(135deg,rgba(62,242,255,.55),transparent 35%,transparent 65%,rgba(167,123,255,.5));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+
+/* Mono "cipher" typography */
+.eyebrow,.skill-label,.hero-foot,.workpay-preview figcaption,.poster-points span,.award-badge,footer>span,footer .copyright,.nav>div a{font-family:var(--mono);text-transform:uppercase}
+.eyebrow{color:var(--accent)}
+.eyebrow:before{content:'> ';opacity:.6}
+.serif{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 18px rgba(62,242,255,.25))}
+.decrypting{font-family:var(--mono)}
+
+/* Nav */
+.nav,.nav.scrolled{background:rgba(10,14,26,.6)}
+.monogram{background:linear-gradient(100deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;font-family:var(--mono)}
+.nav>div{background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(62,242,255,.1)}
+.nav>div a{color:var(--muted);letter-spacing:1px;font-size:11.5px}
+.nav>div a[aria-current]{color:#05070d;background:var(--accent);box-shadow:0 0 18px rgba(62,242,255,.45)}
+
+/* Buttons */
+.dark,.email-cta{color:#05070d;background:linear-gradient(135deg,var(--accent),#6fb6ff);border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 28px rgba(62,242,255,.35)}
+.email-cta:hover,.button:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 44px rgba(62,242,255,.55)}
+.button:not(.dark){color:var(--ink);background:rgba(255,255,255,.05);border:1px solid rgba(62,242,255,.3)}
+.text-link{color:var(--accent)}
+
+/* Hero */
+.hero-portrait-wrap:before{background:linear-gradient(140deg,rgba(62,242,255,.45),rgba(167,123,255,.45));filter:blur(70px)}
+.hero-portrait-frame{background:rgba(255,255,255,.05);border:1px solid rgba(62,242,255,.25)}
+
+/* Panels & chips */
+.about-visual{background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(62,242,255,.2),0 20px 60px rgba(0,0,0,.6)}
+.skills span,.project-tags span{font-family:var(--mono);font-size:11.5px;color:#bfeaff;background:rgba(62,242,255,.06);border:1px solid rgba(62,242,255,.22);box-shadow:none}
+.skills span:hover,.project-tags span:hover{background:rgba(62,242,255,.14);box-shadow:0 0 14px rgba(62,242,255,.25)}
+.section-heading{border-bottom:1px solid rgba(62,242,255,.14)}
+.achievement-entry+.achievement-entry{border-top:1px solid rgba(62,242,255,.12)}
+.award-badge{color:#05070d;box-shadow:0 0 22px rgba(167,123,255,.4)}
+.workpay-preview{background:linear-gradient(160deg,rgba(62,242,255,.08),rgba(167,123,255,.08))}
+.certificate-card{background:var(--glass-bg);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow)}
+.award-gallery figcaption{color:var(--muted)}
+.contact-card{background:rgba(255,255,255,.04);border:1px solid rgba(62,242,255,.15)}
+.contact-card:hover{background:rgba(62,242,255,.1);box-shadow:0 0 24px rgba(62,242,255,.2)}
+img{filter:saturate(1.05) contrast(1.03)}
+
+/* Viewer */
+.image-viewer{background:rgba(8,12,22,.85);color:var(--ink);border:1px solid rgba(62,242,255,.25)}
+.image-viewer::backdrop{background:rgba(0,0,0,.6);backdrop-filter:blur(6px)}
+.viewer-close{color:var(--ink);background:rgba(255,255,255,.06);border:1px solid rgba(62,242,255,.25)}
